@@ -12,11 +12,9 @@ example:
 function fibsIteration(n) {
     let arr = [0, 1];
 
-    let first = 0;
 
-    for (let i = 2; i < n; i++) {
-        arr.push(arr[first] + arr[first + 1]);
-        first++;
+    for (let i = 0; i < (n-2); i++) {
+        arr.push(arr[i] + arr[i + 1]);
     };
 
     return arr;
