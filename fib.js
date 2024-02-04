@@ -20,3 +20,22 @@ function fibsIteration(n) {
     return arr;
 };
 console.log(fibsIteration(8));// [0, 1, 1, 2, 3, 5, 8, 13]
+
+console.log('-------------------------------------------------------------------------------------');
+/*
+using recursion, do the same thing.
+*/
+
+function fibsRecursion(n) {
+
+    if (n <= 2) {
+        return [0, 1];
+    };
+
+    const arr = fibsRecursion(n-1);
+
+    arr.push(arr[arr.length-1] + arr[arr.length-2]);
+
+    return arr;
+};
+console.log(fibsRecursion(8));// [0, 1, 1, 2, 3, 5, 8, 13]
