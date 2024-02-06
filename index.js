@@ -1,9 +1,10 @@
 import {mergeSort} from './mergeSort.js';
 
-console.log('---------------------------------');
-
 const submitBtn = document.querySelector('button');
 const input = document.querySelector('form input');
+const unsortedText = document.querySelector('.unsorted');
+const sortedText = document.querySelector('.sorted');
+
 input.value = '';
 let unsorted, sorted;
 
@@ -26,6 +27,28 @@ function validateNumbers(numString) {
     return numString;
 };
 
+function displayInfo(unsorted, sorted) {
+    // unsortedText.innerText = `Unsorted Numbers: [ ${ unsorted} ]`;
+    // sortedText.innerText = `Sorted Numbers: [ ${sorted} ]`;
+
+    let unsortedHeader = document.createElement('p');
+    unsortedHeader.innerText = 'Unsorted Numbers:';
+    let unsortedNumbers = document.createElement('p');
+    unsortedNumbers.innerText = `[ ${unsorted} ]`;
+
+    let sortedHeader = document.createElement('p');
+    sortedHeader.innerText = 'Sorted Numbers:';
+    let sortedNumbers = document.createElement('p');
+    sortedNumbers.innerText = `[ ${sorted} ]`;
+
+
+
+    unsortedText.appendChild(unsortedHeader);
+    unsortedText.appendChild(unsortedNumbers);
+    sortedText.appendChild(sortedHeader);
+    sortedText.appendChild(sortedNumbers);
+};
+
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -33,6 +56,5 @@ submitBtn.addEventListener('click', (e) => {
     input.value = '';
     sorted = mergeSort([...unsorted]);
 
-
-
+    displayInfo(unsorted, sorted);
 });
