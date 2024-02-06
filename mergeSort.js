@@ -126,3 +126,5 @@ function mergeSort(arr) {
 console.log(mergeSort([1,3,5,7,2,4,6])); // [1, 2, 3, 4, 5, 6, 7]
 console.log(mergeSort([3,2,1,13,8,5,0,1]))// [0, 1, 1, 2, 3, 5, 8, 13]
 console.log(mergeSort([105,79,100,110]))// [79, 100, 105, 110]
+
+export { mergeSort };
