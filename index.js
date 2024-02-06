@@ -28,8 +28,8 @@ function validateNumbers(numString) {
 };
 
 function displayInfo(unsorted, sorted) {
-    // unsortedText.innerText = `Unsorted Numbers: [ ${ unsorted} ]`;
-    // sortedText.innerText = `Sorted Numbers: [ ${sorted} ]`;
+    unsortedText.innerHTML = '';
+    sortedText.innerHTML = '';
 
     let unsortedHeader = document.createElement('p');
     unsortedHeader.innerText = 'Unsorted Numbers:';
